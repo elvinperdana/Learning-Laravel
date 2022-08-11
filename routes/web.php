@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ShopController;
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +40,14 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::prefix('shop')->group(function () {
+    Route::get('/logout', [LoginController::class,'logout'])->name('shop.user.logout');
+    Route::get('/login', [LoginController::class, 'loginview'])->name('shop.login');
+    Route::post('/registration', [LoginController::class, 'user_regis'])->name('shop.user.regis');
+    Route::post('/login', [LoginController::class, 'user_login'])->name('shop.user.login');
+    Route::get('/admin', [LoginController::class,'admin'])->name('admin.admin');
     Route::get('/dashboard', [ShopController::class, 'dashboard'])->name('shop.dashboard');
+    Route::get('/aboutus', [ShopController::class, 'view_aboutus'])->name('shop.dashboard.aboutus');
+    Route::get('/contuctus', [ShopController::class, 'view_contuctus'])->name('shop.dashboard.contuctus');
+    Route::get('/cart', [ShopController::class, 'view_cart'])->name('shop.dashboard.cart');
+
 });   

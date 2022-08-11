@@ -20,6 +20,22 @@ class ShopController extends Controller
         return view('shop.page.dashboard', ['product'=>$product]);
     }
 
+    public function view_aboutus()
+    {
+        return view('shop.page.aboutus');
+    }
+
+    public function view_contuctus()
+    {
+        return view('shop.page.contuctus');
+    }
+
+    
+    public function view_cart()
+    {
+        return view('shop.page.cart');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
