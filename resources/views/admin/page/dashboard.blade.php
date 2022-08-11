@@ -23,7 +23,9 @@
                 <thead>
                 <tr>
                     <th>No</th>
-                    <th>Product</th>
+                    <th>Title Book</th>
+                    <th>Author</th>
+                    <th>Publish</th>
                     <th>Quantity</th>
                     <th>Price per Product</th>
                     <th>Product Image</th>
@@ -36,7 +38,9 @@
                     @foreach ($product as $p)
                         <tr>
                             <td style="vertical-align: middle;">{{ $i }}</td>
-                            <td style="vertical-align: middle;">{{ $p->name }}</td>
+                            <td style="vertical-align: middle;">{{ $p->title }}</td>
+                            <td style="vertical-align: middle;">{{ $p->author }}</td>
+                            <td style="vertical-align: middle;">{{ $p->publish }}</td>
                             <td style="vertical-align: middle;">{{ $p->quantity }}</td>
                             <td style="vertical-align: middle;">@money($p->price)</td>
                             <td style="vertical-align: middle;">

@@ -42,7 +42,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = new Product([
-            'name' => $request->get('product_name'),
+            'title' => $request->get('title'),
+            'author' => $request->get('author'),
+            'publish' => $request->get('publish'),
             'quantity'=> $request->get('quantity'),
             'price'=> $request->get('price')
         ]);
@@ -97,10 +99,12 @@ class ProductController extends Controller
     public function update(Request $request, Product $id)
     {
         $product = Product::find($request->get('id'));
-        $product->name = $request->get('product_name');
+        $product->title = $request->get('title');
+        $product->author = $request->get('author');
+        $product->publish = $request->get('publish');
         $product->quantity = $request->get('quantity');
         $product->price = $request->get('price');
-        
+
         if($request->hasfile('product_image'))
         {
             $old_img = $product->product_image;

@@ -10,6 +10,6 @@ class Transaction extends Model
     use HasFactory;
     protected $table = 'transaction';
     protected $fillable = [
-        'name','quantity','price','product_image'
+        'email_buyer','buyer','title','author','publish','quantity','price','product_image'
     ];
 }

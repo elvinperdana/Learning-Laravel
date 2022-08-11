@@ -23,8 +23,16 @@
             <form action="{{route('admin.product.store')}}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="mb-3">
-                    <label for="ProductNameID" class="form-label">Product Name</label>
-                    <input type="text" class="form-control" id="ProductNameID" name="product_name">
+                    <label for="ProductTitleID" class="form-label">Title Book</label>
+                    <input type="text" class="form-control" id="ProductTitleID" name="title">
+                </div>
+                <div class="mb-3">
+                    <label for="ProductAuthorID" class="form-label">Author Book</label>
+                    <input type="text" class="form-control" id="ProductAuthorID" name="author">
+                </div>
+                <div class="mb-3">
+                    <label for="ProductPublishID" class="form-label">Publish Book</label>
+                    <input type="text" class="form-control" id="ProductPublishID" name="publish">
                 </div>
                 <div class="mb-3">
                     <label for="ProductQuantityID" class="form-label">Product Quantity</label>
@@ -32,17 +40,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="ProductPriceID">Product Price</label>
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <select name="mata_uang" class="form-select" aria-label="Default select example">
-                            <option value="$">$</option>
-                            <option value="Rp">Rp</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-11">
-                            <input type="number" class="form-control" id="ProductPriceID" name="price">
-                        </div>
-                    </div>
+                    <input type="number" class="form-control" id="ProductPriceID" name="price">
                 </div>
                 <div class="mb-3">
                     <label for="ProductImageID" class="form-label">Product Image</label>

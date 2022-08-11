@@ -28,11 +28,12 @@
                 <thead>
                 <tr>
                     <th>No</th>
-                    <th>Product</th>
+                    <th>Title Book</th>
+                    <th>Author</th>
+                    <th>Publish</th>
                     <th>Quantity</th>
                     <th>Price per Product</th>
                     <th>Product Image</th>
-                    <th>Action</th>
                 </tr>
                 </thead>
                     <tbody>
@@ -42,7 +43,9 @@
                     @foreach ($product as $p)
                         <tr>
                             <td style="vertical-align: middle;">{{ $i }}</td>
-                            <td style="vertical-align: middle;">{{ $p->name }}</td>
+                            <td style="vertical-align: middle;">{{ $p->title }}</td>
+                            <td style="vertical-align: middle;">{{ $p->author }}</td>
+                            <td style="vertical-align: middle;">{{ $p->publish }}</td>
                             <td style="vertical-align: middle;">{{ $p->quantity }}</td>
                             <td style="vertical-align: middle;">@money($p->price)</td>
                             <td style="vertical-align: middle;">
@@ -52,7 +55,6 @@
                             </td>
                             <td style="vertical-align: middle;">
                                 <a href="{{route('admin.product.edit' , $p->id)}}"><button type="button" class="btn btn-warning"><i class="fas fa-edit" style="color:white"></i></button></a>
-                                
                                 <button type="submit" class="btn btn-danger" onClick="deleteData('{{$p->id}}','{{$p->name}}')"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>

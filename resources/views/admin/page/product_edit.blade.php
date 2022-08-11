@@ -25,8 +25,16 @@
                 <input type="text" class="form-control" id="id_product" name="id" value="{{$product->id}}" readonly hidden>
 
                 <div class="mb-3">
-                    <label for="ProductNameID" class="form-label">Product Name</label>
-                    <input type="text" class="form-control" id="ProductNameID" name="product_name" value="{{$product->name}}">
+                    <label for="ProductTitleID" class="form-label">Title Book</label>
+                    <input type="text" class="form-control" id="ProductTitleID" name="title" value="{{$product->title}}">
+                </div>
+                <div class="mb-3">
+                    <label for="ProductAuthorID" class="form-label">Author Book</label>
+                    <input type="text" class="form-control" id="ProductAuthorID" name="author" value="{{$product->author}}">
+                </div>
+                <div class="mb-3">
+                    <label for="ProductPublishID" class="form-label">Publish Book</label>
+                    <input type="text" class="form-control" id="ProductPublishID" name="publish" value="{{$product->publish}}">
                 </div>
                 <div class="mb-3">
                     <label for="ProductQuantityID" class="form-label">Product Quantity</label>
@@ -34,17 +42,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="ProductPriceID">Product Price</label>
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <select name="mata_uang" class="form-select" aria-label="Default select example">
-                            <option value="$">$</option>
-                            <option value="Rp">Rp</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-11">
-                            <input type="number" class="form-control" id="ProductPriceID" name="price"  value="{{$product->price}}">
-                        </div>
-                    </div>
+                    <input type="number" class="form-control" id="ProductPriceID" name="price"  value="{{$product->price}}">
                 </div>
                 <div class="mb-3">
                     <label for="ProductImageID" class="form-label">Product Image</label>

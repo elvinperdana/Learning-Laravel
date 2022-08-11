@@ -17,9 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('customer_email');
             $table->string('customer_name');
-            $table->string('product_name');
+            $table->string('title');
+            $table->string('author');
+            $table->string('publish');
             $table->string('quantity');
             $table->string('price');
+            $table->string('product_image');
             $table->timestamps();
         });
     }
