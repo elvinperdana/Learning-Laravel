@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Shop;
 use App\Models\Product;
+use App\Models\Message;
+use Illuminate\Support\Facades\POST;
 
 
 class ShopController extends Controller
@@ -36,14 +38,23 @@ class ShopController extends Controller
         return view('shop.page.cart');
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function storeMessage(Request $request)
     {
-        //
+        $message = new Message([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'contact' => $request->get('contact'),
+            'msg'=> $request->get('msg'),
+        ]);
+
+        $message->save();
+        return redirect()->route('shop.dashboard.contuctus')->with(['message' => 'Message Hash Been ']);
     }
 
     /**
@@ -52,9 +63,10 @@ class ShopController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function tableMessage()
     {
-        //
+        $message = Message::all();
+        return view('admin.page.komplain', ['message'=>$message]);
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\POST;
 use App\Models\Product;
+use App\Models\Message;
 use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
@@ -74,6 +75,13 @@ class ProductController extends Controller
     {
         return view('admin.product.dashboard', ['product'=>$product]);
     }
+
+    public function viewMessage(Message $message)
+    {
+        $message = Message::all();
+        return view('admin.page.komplain', ['message'=>$message]);
+    }
+
 
     /**
      * Show the form for editing the specified resource.

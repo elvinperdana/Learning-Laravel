@@ -26,6 +26,12 @@
                     Transaction
                 </a>
             </li>
+            <li class="nav-item my-1">
+            <a href="{{route('admin.product.complaint')}}" class="btn btn-outline-primary {{ Request::is('admin/complain') || Request::is('admin/complain/*') ? 'active' : ''}}" style="width:100%;text-align:left" aria-current="page">
+                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                    Complaint
+                </a>
+            </li>
         </ul>
     </div>
 </div>

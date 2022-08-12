@@ -28,6 +28,11 @@ Route::prefix('admin')->group(function () {
         Route::get('/transaction', [TransactionController::class, 'transaction'])->name('admin.transaction');
     });     
 
+    Route::prefix('complain')->group(function () {
+        Route::get('/complain', [ProductController::class, 'viewMessage'])->name('admin.product.complaint');
+    });  
+
+
     Route::prefix('product')->group(function () {
         Route::get('/', [ProductController::class, 'index'])->name('admin.product.index');
         Route::get('/add', [ProductController::class, 'create'])->name('admin.product.add');
@@ -35,19 +40,21 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('admin.product.edit');
         Route::post('/update', [ProductController::class, 'update'])->name('admin.product.update');
         Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('admin.product.destroy');
+
     });
 
 });
 
 Route::prefix('shop')->group(function () {
     Route::get('/logout', [LoginController::class,'logout'])->name('shop.user.logout');
-    Route::get('/login', [LoginController::class, 'loginview'])->name('shop.login');
-    Route::post('/registration', [LoginController::class, 'user_regis'])->name('shop.user.regis');
+    Route::get('/', [LoginController::class, 'loginview'])->name('shop.login');
+    Route::post('/registration', [LoginController::class, 'userregis'])->name('shop.user.regis');
     Route::post('/login', [LoginController::class, 'user_login'])->name('shop.user.login');
     Route::get('/admin', [LoginController::class,'admin'])->name('admin.admin');
     Route::get('/dashboard', [ShopController::class, 'dashboard'])->name('shop.dashboard');
     Route::get('/aboutus', [ShopController::class, 'view_aboutus'])->name('shop.dashboard.aboutus');
     Route::get('/contuctus', [ShopController::class, 'view_contuctus'])->name('shop.dashboard.contuctus');
     Route::get('/cart', [ShopController::class, 'view_cart'])->name('shop.dashboard.cart');
+    Route::post('/message', [ShopController::class, 'storeMessage'])->name('shop.contuctus.message');
 
 });   

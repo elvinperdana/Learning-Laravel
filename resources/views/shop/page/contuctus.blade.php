@@ -94,25 +94,22 @@
 <div class="container">
     <section class="get-in-touch">
     <h1 style="margin:30px 0;"> Contuct Us </h1>
-   <form class="contact-form row">
+   <form class="contact-form row"  method="post" action="{{route('shop.contuctus.message')}}">
+      {{ csrf_field() }}
       <div class="form-field col-lg-6">
-         <input id="name" class="input-text js-input" type="text" required>
-         <label class="label" for="name">Name</label>
+         <input id="name" class="input-text js-input" type="text" name="name"required>
+         <label class="label" for="name" >Name</label>
       </div>
       <div class="form-field col-lg-6 ">
-         <input id="email" class="input-text js-input" type="email" required>
-         <label class="label" for="email">E-mail</label>
-      </div>
-      <div class="form-field col-lg-6 ">
-         <input id="company" class="input-text js-input" type="text" required>
-         <label class="label" for="company">Company Name</label>
+         <input id="email" class="input-text js-input" type="email" name="email"required>
+         <label class="label" for="email" >E-mail</label>
       </div>
        <div class="form-field col-lg-6 ">
-         <input id="phone" class="input-text js-input" type="text" required>
+         <input id="phone" class="input-text js-input" type="text" name="contact"required>
          <label class="label" for="phone">Contact Number</label>
       </div>
       <div class="form-field col-lg-12">
-         <input id="message" class="input-text js-input" type="text" required>
+         <input id="message" class="input-text js-input" type="text" name="msg"required>
          <label class="label" for="message">Message</label>
       </div>
       <div class="form-field col-lg-12">

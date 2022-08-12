@@ -14,7 +14,7 @@ class LoginController extends Controller
     }
     
     
-    public function user_regis()
+    public function userregis()
     {
         $this->validate(request(), [
             'name' => 'required',
@@ -30,11 +30,11 @@ class LoginController extends Controller
         auth()->login($user);
 
         return redirect()->route('shop.login');
-    }
+        }
     
-      public function logout(Request $request) {
+        public function logout(Request $request) {
         Auth::logout();
-        return redirect()->route('shop.login.index');
+        return redirect()->route('shop.login');
         } 
     
     

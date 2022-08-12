@@ -17,6 +17,11 @@
                     <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                 </button>
                 </a>
+                <a href="{{route('shop.user.logout')}}">
+                <button class="btn btn-outline-dark" type="submit" >
+                    Logout
+                </button>
+                </a>
             </div>
         </div>
     </div>

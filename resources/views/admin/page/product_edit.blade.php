@@ -20,7 +20,7 @@
         <div class="container mt-5">
             <h2 style="margin-bottom: 40px;">Edit Product</h2>
 
-            <form action="{{route('admin.product.update')}}" method="post" enctype="multipart/form-data">
+            <form id="table_product" action="{{route('admin.product.update')}}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <input type="text" class="form-control" id="id_product" name="id" value="{{$product->id}}" readonly hidden>
 
@@ -64,5 +64,11 @@
 @endsection
 
 @section('custom-script')
-
+    <script>
+        $(document).ready(function () {
+            $('#table_product').DataTable({
+                aLengthMenu: [[25, 50, 75, -1], [25, 50, 75, "Semua"]],
+            });
+        });
+    </script>
 @endsection
